@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <script>
+      var arr = ["apple", "orange", "apple", "orange", "pear", "orange"];
+
+      function getWordCnt(arr) {
+        return arr.reduce(function (prev, next) {
+          prev[next] = prev[next] + 1 || 1;
+          return prev;
+        }, 0);
+      }
+      getWordCnt(arr);
+
+      // var arr = [1, 1, 8, 8, 12, 12, 15, 15, 16, 16];
+      // function unlink(arr) {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("错误！");
+      //     return;
+      //   }
+      //   var array = [];
+      //   for (var i = 0; i < arr.length; i++) {
+      //     // 首次遍历数组
+      //     if (array.indexOf(arr[i]) === -1) {
+      //       // 判断索引有没有等于
+      //       array.push(arr[i]);
+      //     }
+      //   }
+      //   return array;
+      // }
+      // console.log(unlink(arr));
+      // var array = "get-element-by-id";
+      // function arr(array) {
+      //   var fooArr = array.split("-");
+      //   var newFoo = fooArr[0];
+      //   for (var i = 1; i < fooArr.length; i++) {
+      //     console.log(fooArr[i].slice(1));
+      //     newFoo += fooArr[i].charAt(0).toUpperCase() + fooArr[i].slice(1);
+      //   }
+      //   return newFoo;
+      // }
+
+      // alert(arr(array));
+    </script>
+  </body>
+</html>

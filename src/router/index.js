@@ -1,27 +1,57 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import BlogHomeView from "../views/blog/BlogHomeView.vue";
+import ExamHomeView from "../views/exam/ExamHomeView.vue";
+import FilmHomeView from "../views/film/FilmHomeView.vue";
+import SchoolHomeView from "../views/school/SchoolHomeView.vue";
+import BlogContentView from "../views/blog/BlogContentView.vue";
+import SchoolVideo from "../views/school/SchoolVideo.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "主页",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/blog",
+    name: "博客",
+    component: BlogHomeView,
+  },
+  {
+    path: "/exam",
+    name: "考证",
+    component: ExamHomeView,
+  },
+  {
+    path: "/film",
+    name: "影音",
+    component: FilmHomeView,
+  },
+  {
+    path: "/school",
+    name: "学堂",
+    component: SchoolHomeView,
+  },
+  {
+    path: "/blog-content/:id",
+    props: true,
+    name: "博客详情页",
+    component: BlogContentView,
+  },
+  {
+    path: "/school-video/:id",
+    props: true,
+    name: "视频播放页",
+    component: SchoolVideo,
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
